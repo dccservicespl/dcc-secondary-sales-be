@@ -1,0 +1,40 @@
+#!/bin/bash
+
+
+user="nirjan"
+local_branch_1="origin/dev"
+local_branch_2="stage"
+
+# Extract branch names from the references
+local_branch=$(git branch --show-current)
+local_user=$(git config user.name)
+local_branch_sha1=$(git rev-parse $local_branch_1)
+local_branch_sha2=$(git rev-parse $local_branch_2)
+
+#echo "[Checks] Running pre-push checks."
+#
+#echo "[Checks] Running Google-java-formatter checks."
+#echo "----------------------------------------------------------"
+##mvn spotless:check
+##mvn spotless:apply
+#
+#if [ "$local_branch" != "stage" ] && [ "$local_branch" != "uat" ]; then
+#  exit 0
+#fi
+#
+#if [ "$local_branch" = $local_branch_2 ] && [ "$local_branch" = "uat" ] && [ "$local_user" = $user ]; then
+#    if [ "$local_branch_sha1" != "$local_branch_sha2" ]; then
+#        echo "Error: The head of the 'origin/dev' and 'stage' branches must be the same. Push to 'stage' is not allowed."
+#        exit 1
+#    fi
+#fi
+#
+#mvn package
+#
+#if [ $? -ne 0 ]; then
+#  echo "Build or tests failed. Aborting push."
+#  exit 1
+#fi
+
+# Allow the push if the conditions are met
+exit 0
