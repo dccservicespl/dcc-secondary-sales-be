@@ -37,11 +37,3 @@ build/
 *.log.*
 /bin/
 
- #Env file
- src/main/resources/application-dccdev.properties
- src/main/resources/application-uat.properties
- src/main/resources/application-prod.properties
- src/main/resources/application.properties
- src/main/resources/log4j.properties
- src/main/resources/messages.properties
- .env
